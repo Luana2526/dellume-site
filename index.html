@@ -1,79 +1,87 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Dellume — moda feminina com elegância e personalidade.">
-  <title>Dellume | Elegância que inspira</title>
-  <style>
-    :root{--cream:#f5f0e8;--sand:#e8dfd2;--ink:#25231f;--muted:#777168;--white:#fffdf9}
-    *{box-sizing:border-box} html{scroll-behavior:smooth}
-    body{margin:0;background:var(--white);color:var(--ink);font-family:Georgia,'Times New Roman',serif}
-    a{color:inherit;text-decoration:none}
-    .top{background:var(--ink);color:#fff;text-align:center;padding:9px 16px;font:11px Arial,sans-serif;letter-spacing:2px}
-    header{display:flex;justify-content:space-between;align-items:center;padding:24px 7%;background:var(--white)}
-    .logo{font-size:32px;letter-spacing:5px;font-weight:bold}
-    nav{display:flex;gap:28px;font:12px Arial,sans-serif;letter-spacing:1.5px;text-transform:uppercase}
-    .hero{min-height:570px;background:linear-gradient(90deg,rgba(28,25,21,.55),rgba(28,25,21,.05)),linear-gradient(135deg,#b8a995,#e7ded2 55%,#8c7d6b);display:flex;align-items:center;padding:8% 10%;color:white}
-    .hero-copy{max-width:520px}
-    .eyebrow{font:11px Arial,sans-serif;letter-spacing:3px;text-transform:uppercase}
-    h1{font-size:clamp(42px,7vw,76px);font-weight:normal;line-height:1.04;margin:20px 0}
-    .hero p{font-size:18px;line-height:1.7;max-width:420px}
-    .button{display:inline-block;margin-top:22px;padding:15px 27px;background:var(--white);color:var(--ink);font:11px Arial,sans-serif;letter-spacing:2px;text-transform:uppercase}
-    section{padding:75px 8%}
-    .intro{text-align:center;background:var(--cream)}
-    .intro h2,.collection h2{font-size:38px;font-weight:normal;margin:12px 0}
-    .intro p{max-width:650px;margin:0 auto;color:var(--muted);font-size:17px;line-height:1.8}
-    .collection{text-align:center}
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:38px;text-align:left}
-    .product-art{height:310px;background:linear-gradient(145deg,#d9cfc1,#a99a87);display:flex;align-items:center;justify-content:center;color:#fff;font-size:28px;letter-spacing:3px}
-    .cards article:nth-child(2) .product-art{background:linear-gradient(145deg,#eee7dc,#b9a995)}
-    .cards article:nth-child(3) .product-art{background:linear-gradient(145deg,#b7aa9b,#817365)}
-    .cards h3{font-weight:normal;font-size:20px;margin:17px 0 5px}
-    .cards p{font:12px Arial,sans-serif;color:var(--muted);letter-spacing:1px}
-    .contact{background:var(--sand);text-align:center}
-    .contact p{font-size:17px;line-height:1.7;color:#5f584f}
-    .contact .button{background:var(--ink);color:white}
-    footer{padding:28px;text-align:center;background:var(--ink);color:#eee;font:11px Arial,sans-serif;letter-spacing:1.5px}
-    @media(max-width:700px){header{padding:20px 5%;flex-direction:column;gap:18px}nav{gap:14px;font-size:10px}.hero{min-height:500px;padding:12% 7%}.cards{grid-template-columns:1fr}.product-art{height:260px}section{padding:58px 7%}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Dellume — moda feminina com elegância e personalidade.">
+<title>Dellume | Elegância que inspira</title>
+<style>
+:root{--cream:#f5f0e8;--sand:#e8dfd2;--ink:#25231f;--muted:#777168;--white:#fffdf9}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--white);color:var(--ink);font-family:Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+.top{background:#28251f;color:#fff;text-align:center;padding:10px;font-size:11px;letter-spacing:2px}
+header{display:flex;justify-content:space-between;align-items:center;padding:22px 7%;background:var(--white)}
+.logo{font:30px Georgia,serif;letter-spacing:5px}
+nav{display:flex;gap:22px;font-size:12px;text-transform:uppercase}
+.hero{min-height:520px;background:linear-gradient(90deg,#29231d99,#29231d11),url('https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1800&q=85') center/cover;display:flex;align-items:center;padding:8%;color:white}
+.hero div{max-width:490px}
+.hero h1{font:normal clamp(44px,7vw,76px)/1.05 Georgia,serif}
+.hero p{line-height:1.8}
+.btn{display:inline-block;background:#f5f0e8;color:#29251f;padding:15px 25px;margin-top:15px;font-size:11px;letter-spacing:2px}
+section{padding:65px 7%}
+.intro{text-align:center;max-width:680px;margin:auto}
+.eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase}
+h2{font:normal 38px Georgia,serif}
+.intro p,.about p{color:#777168;line-height:1.8}
+.filters{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:30px}
+.filters button{padding:10px 16px;background:white;border:1px solid #d8cfc2}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.product img{width:100%;height:300px;object-fit:cover}
+.product h3{font:normal 18px Georgia,serif}
+.product p{font-size:12px;color:#777168}
+.price{font-weight:bold}
+.buy{width:100%;padding:12px;background:white;border:1px solid #b8a58f;margin-top:10px}
+.buy:hover{background:#29251f;color:white}
+.banner{background:#f5f0e8;display:grid;grid-template-columns:1fr 1fr;align-items:center}
+.banner img{width:100%;height:400px;object-fit:cover}
+.banner div{padding:10%}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.about img{width:100%;height:380px;object-fit:cover}
+.info{background:#29251f;color:white;display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.info p{font-size:13px;line-height:1.8;color:#ddd}
+footer{text-align:center;background:#211e19;color:#ddd;padding:25px;font-size:11px;line-height:1.8}
+.notice{font-size:11px;color:#8b7c69}
+@media(max-width:750px){header{flex-direction:column;gap:15px}nav{gap:12px;font-size:10px}.products{grid-template-columns:repeat(2,1fr)}.product img{height:230px}.banner,.about,.info{grid-template-columns:1fr}.hero{min-height:440px}section{padding:50px 6%}}
+</style>
 </head>
 <body>
-  <div class="top">MODA FEMININA • ELEGÂNCIA EM CADA DETALHE</div>
-  <header>
-    <a class="logo" href="#">DELLUME</a>
-    <nav><a href="#inicio">Início</a><a href="#sobre">A marca</a><a href="#colecao">Coleção</a><a href="#contato">Contato</a></nav>
-  </header>
-  <main>
-    <section class="hero" id="inicio">
-      <div class="hero-copy">
-        <div class="eyebrow">Essencialmente feminina</div>
-        <h1>Elegância que inspira confiança.</h1>
-        <p>Peças que valorizam sua personalidade, acompanham sua rotina e revelam a beleza de ser você.</p>
-        <a class="button" href="#colecao">Conheça a coleção</a>
-      </div>
-    </section>
-    <section class="intro" id="sobre">
-      <div class="eyebrow">Sobre a Dellume</div>
-      <h2>Vista-se de você.</h2>
-      <p>A Dellume acredita que estilo vai além das tendências. Nossa proposta é unir sofisticação, conforto e versatilidade em uma curadoria de moda feminina feita para mulheres que expressam sua essência com autenticidade.</p>
-    </section>
-    <section class="collection" id="colecao">
-      <div class="eyebrow">Nossa seleção</div>
-      <h2>Peças para eternizar momentos</h2>
-      <div class="cards">
-        <article><div class="product-art">ALFAIATARIA</div><h3>Clássicos atemporais</h3><p>ESTRUTURA E ELEGÂNCIA</p></article>
-        <article><div class="product-art">RENDA</div><h3>Delicadeza nos detalhes</h3><p>FEMINILIDADE E LEVEZA</p></article>
-        <article><div class="product-art">ESSENCIAIS</div><h3>Versatilidade diária</h3><p>CONFORTO COM ESTILO</p></article>
-      </div>
-    </section>
-    <section class="contact" id="contato">
-      <div class="eyebrow">Vamos conversar?</div>
-      <h2>Seu próximo look começa aqui.</h2>
-      <p>Acompanhe novidades, inspirações e lançamentos da Dellume.</p>
-      <a class="button" href="https://www.instagram.com/" target="_blank" rel="noopener">Acesse nosso Instagram</a>
-    </section>
-  </main>
-  <footer>DELLUME · MODA FEMININA · ELEGÂNCIA QUE INSPIRA</footer>
+<div class="top">MODA FEMININA • ELEGÂNCIA EM CADA DETALHE</div>
+<header>
+<a class="logo" href="#inicio">DELLUME</a>
+<nav><a href="#inicio">Início</a><a href="#colecao">Coleção</a><a href="#sobre">A marca</a><a href="#contato">Contato</a></nav>
+</header>
+<main>
+<section class="hero" id="inicio">
+<div>
+<span class="eyebrow">Nova coleção · Essência</span>
+<h1>Elegância que inspira confiança.</h1>
+<p>Peças atemporais, detalhes delicados e sofisticação para acompanhar você em todos os momentos.</p>
+<a class="btn" href="#colecao">Conheça a coleção</a>
+</div>
+</section>
+<section><div class="intro"><span class="eyebrow">Curadoria Dellume</span><h2>Vista sua melhor versão</h2><p>Uma seleção pensada para mulheres que encontram beleza na simplicidade e personalidade em cada detalhe.</p></div></section>
+<section id="colecao">
+<div class="intro"><span class="eyebrow">Escolhas da estação</span><h2>Nossa coleção</h2><p>Descubra peças versáteis para compor produções elegantes do dia à noite.</p></div>
+<div class="products">
+<article class="product"><img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=700&q=80" alt="Vestido midi"><h3>Vestido Midi Clássico</h3><p>Caimento leve · Elegância atemporal</p><span class="price">R$ 289,90</span><button class="buy" onclick="add('Vestido Midi Clássico',289.90)">Adicionar à sacola</button></article>
+<article class="product"><img src="https://images.unsplash.com/photo-1551163943-3f6a855d1153?auto=format&fit=crop&w=700&q=80" alt="Blusa feminina"><h3>Blusa Essencial</h3><p>Toque macio · Modelagem delicada</p><span class="price">R$ 159,90</span><button class="buy" onclick="add('Blusa Essencial',159.90)">Adicionar à sacola</button></article>
+<article class="product"><img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=700&q=80" alt="Blazer"><h3>Blazer Lumière</h3><p>Alfaiataria moderna · Corte elegante</p><span class="price">R$ 329,90</span><button class="buy" onclick="add('Blazer Lumière',329.90)">Adicionar à sacola</button></article>
+<article class="product"><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=80" alt="Calça pantalona"><h3>Calça Pantalona</h3><p>Movimento fluido · Cintura alta</p><span class="price">R$ 229,90</span><button class="buy" onclick="add('Calça Pantalona',229.90)">Adicionar à sacola</button></article>
+</div>
+<p class="notice">* Produtos, imagens e valores ilustrativos para apresentação acadêmica.</p>
+</section>
+<section class="banner"><img src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=1000&q=85" alt="Moda feminina"><div><span class="eyebrow">Menos excesso, mais essência</span><h2>O essencial nunca sai de moda.</h2><p>Uma moda que valoriza a individualidade, unindo conforto, versatilidade e elegância.</p><a class="btn" href="#sobre">Conheça a Dellume</a></div></section>
+<section class="about" id="sobre"><div><span class="eyebrow">Nossa essência</span><h2>Elegância em cada detalhe.</h2><p>A Dellume é uma marca-conceito de moda feminina criada para celebrar a confiança e a autenticidade. Uma identidade visual neutra, linhas delicadas e uma curadoria que valoriza a mulher contemporânea.</p><p>Do trabalho aos encontros especiais, acreditamos que vestir-se bem é também uma forma de expressar quem somos.</p></div><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=85" alt="Estilo Dellume"></section>
+<section class="info" id="contato"><div><h3>Atendimento</h3><p>Segunda a sexta, das 9h às 18h<br>Sábado, das 9h às 13h<br>Atendimento demonstrativo</p></div><div><h3>Visite-nos</h3><p>Rua das Acácias, 120<br>Centro · Nova Friburgo – RJ<br>Endereço fictício para o projeto</p></div><div><h3>Fale com a Dellume</h3><p>contato@dellume.com.br<br>(22) 99999-0000<br>Instagram: @dellume.store</p></div></section>
+<section id="carrinho"><div class="intro"><span class="eyebrow">Sua seleção</span><h2>Sacola de compras</h2><p id="items">Sua sacola está vazia.</p><p><strong>Total: R$ <span id="total">0,00</span></strong></p><button class="btn" onclick="alert('Esta é uma demonstração acadêmica. Não há venda ou pagamento real.')">Finalizar pedido</button><p class="notice">Carrinho ilustrativo: não realiza pedidos nem pagamentos reais.</p></div></section>
+</main>
+<footer>DELLUME · ELEGÂNCIA QUE INSPIRA<br>Projeto acadêmico demonstrativo. Loja, endereço, contatos, produtos e preços fictícios. Não realiza vendas reais.</footer>
+<script>
+let cart=[];
+function add(name,price){cart.push({name,price});document.getElementById('items').textContent=cart.map(x=>x.name+' — R$ '+x.price.toFixed(2).replace('.',',')).join(' | ');document.getElementById('total').textContent=cart.reduce((s,x)=>s+x.price,0).toFixed(2).replace('.',',')}
+</script>
 </body>
 </html>
